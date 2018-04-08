@@ -9,18 +9,19 @@ import { error } from 'util';
 })
 
 export class IndexComponent implements OnInit {
-  datos:String;
+  datos:Object;
   title:string = "Hola";
   someProperty:string = '';
 
-  constructor(private bookService:BookService) {
-  }
+  constructor(private bookService:BookService) { }
 
   ngOnInit() {
-    //console.log('data var:' + this.data);
-    console.log(this.bookService.cars);
-    this.someProperty = this.bookService.getData();
-
+    this.bookService.getData().subscribe(
+      data => {
+        this.datos = data;
+        console.log(this.datos);
+      }
+    );
   }
 
 }

@@ -25,11 +25,11 @@ export class BookService {
         const header = new HttpHeaders(fortniteHeader);
         */
        const headers = new HttpHeaders({
-           'Authorization':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im9zY2FyIiwiZXhwIjoxNTIzMTg5NTY3fQ.1_1bhnkucLGNc0iQTKRa4hc4c3LezCztU4s6Z0J_Y-Q'
+           'Authorization':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im9zY2FyIiwiZXhwIjoxNTIzMjA3MjY0fQ.MzYx-cw_hs1Pk55nvVEkmLv8o7FOP7ejfaV3GYE6ORM'
         });
 
-        //return this.http.get('http://localhost:8080/api/books', {headers});
-        return "Hola, soy service";
+        return this.http.get('http://localhost:8080/api/getUser', {headers});
+        //return "Hola, soy service";
     }
     
  }
