@@ -11,13 +11,16 @@ import { error } from 'util';
 export class IndexComponent implements OnInit {
   datos:String;
   title:string = "Hola";
-  constructor(private data:BookService) {
-    this.data.getData().subscribe(
-      data => this.datos
-    )
+  someProperty:string = '';
+
+  constructor(private bookService:BookService) {
   }
 
   ngOnInit() {
+    //console.log('data var:' + this.data);
+    console.log(this.bookService.cars);
+    this.someProperty = this.bookService.getData();
+
   }
 
 }
